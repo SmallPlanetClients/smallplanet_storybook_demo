@@ -2,10 +2,30 @@ import { ButtonIcon, ButtonSvg } from '@/components/controls/Button/style'
 import { Shape, Color, Size, Variant } from '@/components/types'
 
 interface PinnedProps {
+  /**
+   * Size of Pin
+   * @default Medium
+   */
   size?: Size
+  /**
+   * Color of Pin
+   * @default Negative (dark)
+   */
   color?: Color
+  /**
+   * Disable button
+   * @default false
+   */
   disabled?: boolean
+  /**
+   * Define variant of pin
+   * @default none
+   */
   variant?: Variant
+  /**
+   * Define if pin is actually pinned (for styling)
+   * @default false
+   */
   isPinned?: boolean
 }
 
