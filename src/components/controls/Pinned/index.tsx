@@ -1,26 +1,29 @@
 import { ButtonIcon, ButtonSvg } from '@/components/controls/Button/style'
 import { Shape, Color, Size, Variant } from '@/components/types'
 
-interface BookmarkProps {
+interface PinnedProps {
   size?: Size
   color?: Color
   disabled?: boolean
   variant?: Variant
+  isPinned?: boolean
 }
 
-export default function Bookmark({
+export default function Pinned({
   size = Size.Medium,
   color = Color.Dark,
   disabled,
   variant,
-}: BookmarkProps) {
+  isPinned = false,
+}: PinnedProps) {
   return (
     <ButtonIcon
       size={size}
-      color={color}
+      color={isPinned ? Color.Primary : color}
       variant={variant}
       shape={Shape.Circle}
       disabled={disabled}
+      isActive={isPinned}
     >
       <ButtonSvg
         xmlns="http://www.w3.org/2000/svg"

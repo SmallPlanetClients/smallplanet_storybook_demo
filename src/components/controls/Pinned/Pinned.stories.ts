@@ -1,16 +1,16 @@
-import Bookmark from './'
+import Pinned from '.'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Size, Color, Variant } from '@/components/types'
 
 const size = [Size.Small, Size.Medium, Size.Large]
 
 const meta = {
-  title: 'Controls/Bookmark',
-  component: Bookmark,
+  title: 'Controls/Pinned',
+  component: Pinned,
   tags: ['controls', 'autodocs'],
   argTypes: {
     size: {
-      description: 'Bookmark button size',
+      description: 'Pinned button size',
       options: size,
     },
     disabled: {
@@ -18,17 +18,25 @@ const meta = {
     },
     color: {
       option: Color
+    },
+    isPinned: {
+      type: 'boolean'
     }
   },
-} satisfies Meta<typeof Bookmark>
+} satisfies Meta<typeof Pinned>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
 
-export const Primary: Story = {
+export const isUnpinned: Story = {
   args: {
-    color: Color.Dark,
-    size: Size.Medium
+    isPinned: false,
+  },
+}
+
+export const isPinned: Story = {
+  args: {
+    isPinned: true,
   },
 }

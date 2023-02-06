@@ -1,6 +1,6 @@
 import AppIcon from '@/components/blocks/AppIcon'
 import Button from '@/components/controls/Button'
-import Bookmark from '@/components/controls/Bookmark'
+import Pinned from '@/components/controls/Pinned'
 import AppState from '@/components/elements/AppState'
 import { Paragraph } from '@/styles/components/Paragraph'
 import { Deployment } from '@/components/types'
@@ -24,7 +24,7 @@ export default function LibraryAppCard({ deployment }: LibraryAppCard) {
       <CardInner>
         <CardHeader>
           <AppIcon logoUrl={deployment.appLogoUrl} alt={deployment.appName} />
-          <Bookmark />
+          <Pinned isPinned={deployment.isPinned} />
         </CardHeader>
 
         <CardDescription>

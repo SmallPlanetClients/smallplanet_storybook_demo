@@ -7,6 +7,7 @@ interface ButtonStyleProps {
   color?: Color
   variant?: Variant
   size?: Size | undefined
+  isActive?: boolean | undefined
 }
 
 export const Button = styled('button') <ButtonStyleProps>`
@@ -23,20 +24,22 @@ export const Button = styled('button') <ButtonStyleProps>`
 
   // shapes
 
-  ${(props) =>
-    (props.shape === Shape.Circle &&
-      css`
-        --button-border-radius: 50%;
-      `) ||
-    (props.shape === Shape.Square &&
-      css`
-        --button-border-radius: 0;
-      `) ||
-    ((props.shape === Shape.Pill || !props.shape) &&
-      css`
-        --button-border-radius: 4.0625rem;
-      `)}
-  }
+  ${(props) => {
+    switch (props.shape) {
+      case Shape.Circle:
+        return css`
+          --button-border-radius: 50%;
+        `
+      case Shape.Square:
+        return css`
+          --button-border-radius: 0;
+        `
+      default:
+        return css`
+          --button-border-radius: 4.0625rem;
+        `
+    }
+  }}
 
   // colors
 
@@ -46,7 +49,7 @@ export const Button = styled('button') <ButtonStyleProps>`
         return css`
           --button-bg-color: ${({ theme }) => theme.colors.secondary};
           --button-bg-hover-color: ${({ theme }) => theme.colors.primary};
-        `;
+        `
       case Color.Dark:
       case Color.Secondary:
         return css`
@@ -54,27 +57,27 @@ export const Button = styled('button') <ButtonStyleProps>`
           --button-color-hover: ${({ theme }) => theme.colors.negativePrimary};
           --button-bg-color:  ${({ theme }) => theme.colors.negativePrimary};
           --button-bg-hover-color: ${({ theme }) => theme.colors.primary};
-        `;
+        `
       case Color.Success:
         return css`
           --button-bg-color: ${({ theme }) => theme.colors.greenLight};
           --button-bg-hover-color: rgba(${({ theme }) => theme.colors.greenLightRgb}, 0.6);
-        `;
+        `
       case Color.Danger:
         return css`
           --button-bg-color: ${({ theme }) => theme.colors.redSubtle};
           --button-bg-hover-color: rgba(${({ theme }) => theme.colors.redSubtleRgb}, 0.6);
-        `;
+        `
       case Color.Warning:
         return css`
           --button-bg-color: ${({ theme }) => theme.colors.yellow};
           --button-bg-hover-color: rgba(${({ theme }) => theme.colors.yellowRgb}, 0.6);
-        `;
+        `
       default:
         return css`
           --button-bg-color: transparent;
           --button-bg-hover-color: transparent;
-        `;
+        `
     }
   }}
 
@@ -86,17 +89,17 @@ export const Button = styled('button') <ButtonStyleProps>`
         return css`
           font-size: calc(${({ theme }) => theme.typography.sizes.base} * 1.2);
           padding: calc(var(--button-padding-y) * 2) calc(var(--button-padding-x) * 2);
-        `;
+        `
       case Size.Small:
         return css`
           font-size: calc(${({ theme }) => theme.typography.sizes.base} / 1.35);
           padding: calc(var(--button-padding-y) / 1.35) calc(var(--button-padding-x) / 1.35);
-        `;
+        `
       default:
         return css`
           font-size: var(--button-font-size);
           padding: var(--button-padding-y) var(--button-padding-x);
-        `;
+        `
     }
   }}
 
@@ -107,22 +110,22 @@ export const Button = styled('button') <ButtonStyleProps>`
       case Variant.Translucent:
         return css`
           background-color: rgba(${({ theme }) => theme.colors.greenLightRgb}, 0.1);
-        `;
+        `
       case Variant.Transparent:
         return css`
           background-color: var(--button-bg-color);
           opacity: 0.6;
-        `;
+        `
       case Variant.Hollow:
         return css`
           background-color: transparent;
           border-color: var(--button-bg-color);
           color: var(--button-bg-color);
-        `;
+        `
       default:
         return css`
           background-color: var(--button-bg-color);
-        `;
+        `
     }
   }}
 
@@ -174,6 +177,13 @@ export const ButtonIcon = styled(Button)`
   padding-top: 6.8px;
   width: 40px;
   height: 40px;
+
+  ${(props) =>
+  (props.isActive &&
+    css`
+        color: ${({ theme }) => theme.colors.negativePrimary};
+      `)}
+  }
 `
 
 export const ButtonSvg = styled.svg`
