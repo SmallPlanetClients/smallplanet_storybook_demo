@@ -5,7 +5,7 @@ import { DeploymentState } from '@/components/types'
 const meta = {
   title: 'Elements/AppState',
   component: AppState,
-  tags: ['elements'],
+  tags: ['elements', 'autodocs'],
   argTypes: {
     state: {
       description: 'App deployment states',

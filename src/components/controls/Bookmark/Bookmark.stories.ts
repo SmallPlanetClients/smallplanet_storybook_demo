@@ -7,7 +7,7 @@ const size = [Size.Small, Size.Medium, Size.Large]
 const meta = {
   title: 'Controls/Bookmark',
   component: Bookmark,
-  tags: ['controls'],
+  tags: ['controls', 'autodocs'],
   argTypes: {
     size: {
       description: 'Bookmark button size',

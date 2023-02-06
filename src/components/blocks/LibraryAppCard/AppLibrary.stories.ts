@@ -19,7 +19,7 @@ const deployment = {
 const meta = {
   title: 'Blocks/LibraryAppCard',
   component: LibraryAppCard,
-  tags: ['views'],
+  tags: ['views', 'autodocs'],
   argTypes: {
     deployment: {
       description: 'App deployment object',
