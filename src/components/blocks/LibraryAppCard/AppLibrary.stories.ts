@@ -1,6 +1,5 @@
 import LibraryAppCard from '../../../views/AppLibrary'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Size } from '@/components/types'
 import FormBricksLogo from '@/assets/images/formbricks-badge.webp'
 import { DeploymentState } from '@/components/types'
 
@@ -19,7 +18,7 @@ const deployment = {
 const meta = {
   title: 'Blocks/LibraryAppCard',
   component: LibraryAppCard,
-  tags: ['views'],
+  tags: ['views', 'autodocs'],
   argTypes: {
     deployment: {
       description: 'App deployment object',

@@ -8,7 +8,7 @@ const size = [Size.Small, Size.Medium, Size.Large]
 const meta = {
   title: 'Blocks/AppIcon',
   component: AppIcon,
-  tags: ['blocks'],
+  tags: ['blocks', 'autodocs'],
   argTypes: {
     size: {
       description: 'Component size',

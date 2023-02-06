@@ -9,7 +9,7 @@ const variants = ['none', Variant.Hollow, Variant.Translucent, Variant.Transpare
 const meta = {
   title: 'Controls/Button',
   component: ActionButton,
-  tags: ['controls'],
+  tags: ['controls', 'autodocs'],
   parameters: {
     backgrounds: {
       default: 'light',
