@@ -181,9 +181,9 @@ export const ButtonIcon = styled(Button)`
   ${(props) =>
   (props.isActive &&
     css`
-        color: ${({ theme }) => theme.colors.negativePrimary};
-      `)}
-  }
+      color: ${({ theme }) => theme.colors.negativePrimary};
+    `
+  )}
 `
 
 export const ButtonSvg = styled.svg`

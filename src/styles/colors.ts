@@ -8,6 +8,10 @@ export const Colors = css`
     --action-secondary-rgb: 41, 189, 122;
     --purple-dark: #413b4f;
     --purple-dark-rgb: 65, 59, 79;
+    --purple-darker: #3b3150;
+    --purple-darker-rgb: 59, 49, 80;
+    --purple-darkest: #302744;
+    --purple-darkest-rgb: 48, 39, 68;
     --black-primary: #000;
     --black-primary-rgb: 0, 0, 0;
     --white-primary: #fff;

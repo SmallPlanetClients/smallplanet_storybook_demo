@@ -23,7 +23,7 @@ export default function LibraryAppCard({ deployment }: LibraryAppCard) {
     <LibraryAppCardContainer>
       <CardInner>
         <CardHeader>
-          <AppIcon logoUrl={deployment.appLogoUrl} alt={deployment.appName} />
+          <AppIcon icon={deployment.appLogo} alt={deployment.appName} />
           <Pinned isPinned={deployment.isPinned} />
         </CardHeader>
 

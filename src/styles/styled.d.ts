@@ -27,6 +27,10 @@ declare module 'styled-components' {
       negativeSecondaryRgb: string,
       purpleDark: string,
       purpleDarkRgb: string,
+      purpleDarker: string,
+      purpleDarkerRgb: string,
+      purpleDarkest: string,
+      purpleDarkestRgb: string,
       white: string,
       whiteRgb: string,
       greyMedium: string,
@@ -39,6 +43,14 @@ declare module 'styled-components' {
       purpleSlightRgb: string,
       greenLight: string,
       greenLightRgb: string
+    },
+    background: {
+      color: {
+        primary: string
+      }
+      gradient: {
+        primary: string
+      }
     },
     fonts: {
       lato: string,

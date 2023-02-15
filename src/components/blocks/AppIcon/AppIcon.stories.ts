@@ -1,7 +1,7 @@
 import AppIcon from '.'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Size } from '@/components/types'
-import FormBricksLogo from '@/assets/images/formbricks-badge.webp'
+import AWSLogo from '@/assets/images/aws-logo.svg'
 
 const size = [Size.Small, Size.Medium, Size.Large]
 
@@ -14,10 +14,20 @@ const meta = {
       description: 'Component size',
       options: size,
     },
-    logoUrl: {
-      description: 'Logo URL prop',
-      type: 'string',
-      defaultValue: FormBricksLogo
+    icon: {
+      description: 'Logo object',
+      iconUrl: {
+        options: [AWSLogo],
+      },
+      iconBackgroundColor: {
+        control: 'color'
+      },
+      iconPad: {
+        control: 'boolean'
+      },
+      iconAlt: {
+        control: 'text'
+      }
     }
   },
 } satisfies Meta<typeof AppIcon>
@@ -29,6 +39,9 @@ type Story = StoryObj<typeof meta>
 export const Medium: Story = {
   args: {
     size: Size.Medium,
-    logoUrl: FormBricksLogo
-  },
+    icon: {
+      iconUrl: AWSLogo,
+      iconBackgroundColor: '#fff',
+    }
+  }
 }

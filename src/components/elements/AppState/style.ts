@@ -32,7 +32,6 @@ export const AppStateWrapper = styled('div') <AppStateProps>`
         color: ${({ theme }) => theme.colors.redSubtle};
       `)
   }
-    }
 `
 
 export const AppStateIcon = styled.svg`
