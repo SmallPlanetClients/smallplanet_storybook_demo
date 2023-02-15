@@ -10,7 +10,11 @@ export default function Library({}) {
       instanceName: 'FormBricks-01',
       appID: '0',
       appName: 'FormBricks',
-      appLogoUrl: FormBricksLogo,
+      appLogo: {
+        iconUrl: FormBricksLogo,
+        iconBackgroundColor: 'rgb(13, 189, 139)',
+        iconPad: false,
+      },
       hostingProvider: 'Clovyr Hosting',
       isPinned: true,
       isUpgradable: true,

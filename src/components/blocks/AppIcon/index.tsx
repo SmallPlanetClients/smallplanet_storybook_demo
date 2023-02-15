@@ -1,23 +1,32 @@
 import { AppIconWrapper, AppIconInner, AppIconImage } from './style'
-import { Size } from '@/components/types'
+import { Size, Icon } from '@/components/types'
 
 interface AppIconProps {
   size?: Size
-  logoUrl: string
-  pad?: boolean
+  icon: Icon
   alt?: string
 }
 
 export default function AppIcon({
   size = Size.Medium,
-  logoUrl,
-  pad,
+  icon,
   alt,
 }: AppIconProps) {
   return (
-    <AppIconWrapper size={size}>
+    <AppIconWrapper
+      size={size}
+      style={{
+        backgroundColor: icon.iconBackgroundColor
+          ? icon.iconBackgroundColor
+          : '#fff',
+      }}
+    >
       <AppIconInner>
-        <AppIconImage src={logoUrl} alt={alt} />
+        <AppIconImage
+          pad={icon?.iconPad}
+          src={icon.iconUrl}
+          alt={icon?.iconAlt}
+        />
       </AppIconInner>
     </AppIconWrapper>
   )

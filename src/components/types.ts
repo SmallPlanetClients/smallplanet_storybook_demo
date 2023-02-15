@@ -58,12 +58,19 @@ export enum DeploymentState {
   Expiring = 'expiring'
 }
 
+export interface Icon {
+  iconUrl?: string
+  iconBackgroundColor?: string
+  iconPad?: boolean
+  iconAlt?: string
+}
+
 export interface Deployment {
   id: number,
   instanceName: string,
   appID: string,
   appName: string,
-  appLogoUrl: string,
+  appLogo: Icon,
   hostingProvider: string,
   isPinned: boolean,
   isUpgradable: boolean,
